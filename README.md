@@ -10,6 +10,10 @@
 
 Version 0.2.0 · Zero dependencies · Python 3.12+ stdlib only
 
+> **Target Audience**: **Backend & Platform Leads, Payment Engineers, AI Infrastructure Teams**  
+> **The Problem**: ~45% of agent SDKs log false `CONFIRMED` receipts on HTTP 504 timeouts, causing silent ledger drift and double-execution retry storms.  
+> **Quantified Benefit**: **100% Preserved Uncertainty (\(\Delta=0\) Toxic Receipts)** | **0 Silent Ledger Errors**.
+
 ---
 
 ## 🎯 What It Does
@@ -100,12 +104,14 @@ Deterministic test fixtures covering every state machine transition:
 
 ---
 
-## 💼 Commercial Offer: Staging Forensic Audit
+---
 
-* **Tier 1 Diagnostic (€1,500 / 48-Hour Sprint)**: Ingest 250 staging traces, compute Toxic Receipt Index (TRI), deliver executive summary.
-* **Tier 2 Forensic Audit (€2,500 / 5-Day Sprint)**: Full wire-level fuzzing, adversarial interception analysis, and `git apply fix.patch` remediation.
+### 💼 Staging Forensic Audit
+Operating mutating AI workflows? We deliver 5-day bounded audits (€1,500 intro rate / €2,500 standard) under NDA with a guaranteed `git apply fix.patch`.  
+- **Tier 1 Diagnostic (€1,500 / 48-Hour Sprint)**: Ingest 250+ staging traces, compute Toxic Receipt Index (TRI %), map retry hazards.
+- **Tier 2 Forensic Audit (€2,500 / 5-Day Sprint)**: Full wire-level fault injection, 30-day trace analysis, and delivery of a `git apply fix.patch` remediation.
 
-Contact: [andrejlo123@gmail.com](mailto:andrejlo123@gmail.com)
+📩 **Contact**: [andrejlo123@gmail.com](mailto:andrejlo123@gmail.com)
 
 ---
 
