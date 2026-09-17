@@ -2,6 +2,12 @@
 
 **Wire-Level Fault Proxy, Toxic Receipt Detector & Offline Audit Log Scanner.**
 
+[![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/python-3.12%2B-blue.svg)](#)
+[![Standard](https://img.shields.io/badge/standard-RFC%208785%20JCS-green.svg)](SPEC.md)
+[![Compliance](https://img.shields.io/badge/compliance-DORA%20Art.%2017(3)-orange.svg)](SPEC.md)
+[![Tests](https://img.shields.io/badge/tests-5%2F5%20passing-brightgreen.svg)](verify.sh)
+
 Version 0.2.0 · Zero dependencies · Python 3.12+ stdlib only
 
 ---
