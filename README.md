@@ -99,7 +99,7 @@ Deterministic test fixtures covering every state machine transition:
 * **Tier 1 Diagnostic (€1,500 / 48-Hour Sprint)**: Ingest 250 staging traces, compute Toxic Receipt Index (TRI), deliver executive summary.
 * **Tier 2 Forensic Audit (€2,500 / 5-Day Sprint)**: Full wire-level fuzzing, adversarial interception analysis, and `git apply fix.patch` remediation.
 
-Contact: `contact@smaos.ai`
+Contact: [andrejlo123@gmail.com](mailto:andrejlo123@gmail.com)
 
 ---
 
