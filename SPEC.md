@@ -51,11 +51,10 @@ The wire-level proxy supports 7 fault injection modes via the
 
 The AEIB classification cascade evaluates in strict order:
 
-```
+```text
 INVALID_INPUT → MISSING_EVIDENCE → CONFLICT → REFUSED → CONFIRMED → UNKNOWN
+     ①               ②               ③          ④          ⑤          ⑥
 ```
-
-$$\text{INVALID\_INPUT} \longrightarrow \text{MISSING\_EVIDENCE} \longrightarrow \text{CONFLICT} \longrightarrow \text{REFUSED} \longrightarrow \text{CONFIRMED} \longrightarrow \text{UNKNOWN}$$
 
 A disposition at a **lower** precedence level is only reachable if all
 higher-precedence checks pass.  `UNKNOWN` is the **fail-safe terminus**:

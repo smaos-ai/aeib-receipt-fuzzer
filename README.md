@@ -103,7 +103,10 @@ bash verify.sh
 
 ## 🔬 Six-Disposition Precedence Cascade
 
-$$\text{INVALID\_INPUT} \longrightarrow \text{MISSING\_EVIDENCE} \longrightarrow \text{CONFLICT} \longrightarrow \text{REFUSED} \longrightarrow \text{CONFIRMED} \longrightarrow \text{UNKNOWN}$$
+```text
+INVALID_INPUT → MISSING_EVIDENCE → CONFLICT → REFUSED → CONFIRMED → UNKNOWN
+     ①               ②               ③          ④          ⑤          ⑥
+```
 
 * **`TOXIC_RECEIPT_DETECTED`**: Emitted when wire observes `TIMEOUT` or `DROP`, but harness logs `CONFIRMED` or `EXECUTED`.
 * **`CLEAN_PASS`**: Emitted when harness preserves uncertainty (`verdict: UNKNOWN`, `retry_held: true`).
