@@ -1,0 +1,17 @@
+{
+  "action_id": "act-2026-audit-504-toxic",
+  "type": "CREDIT_SETTLEMENT",
+  "amount": 1850000.0,
+  "currency": "EUR",
+  "counterparty": "DE89370400440532013000",
+  "timestamp": "2026-09-17T08:30:00Z",
+  "wire_fault": "TIMEOUT",
+  "http_status": 504,
+  "gateway_error": "Gateway Timeout (upstream socket timed out after 5000ms)",
+  "verdict": "CONFIRMED",
+  "status": "EXECUTED",
+  "retry_held": false,
+  "evidence_disposition": "FABRICATED_CONFIRMATION",
+  "signature": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkNPU0VfU2lnbjEifQ...",
+  "notes": "TOXIC RECEIPT: Harness signed CONFIRMED based on conversational context despite observing an HTTP 504 timeout. Downstream ledger settlement was never proven."
+}

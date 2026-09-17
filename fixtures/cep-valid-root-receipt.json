@@ -1,0 +1,21 @@
+{
+  "version": "0.1-rc2",
+  "action_id": "act-2026-audit-root-valid",
+  "evidence_type": "RECEIPT",
+  "timestamp": "2026-09-17T08:30:00Z",
+  "wire_fault": "NONE",
+  "http_status": 200,
+  "verdict": "CONFIRMED",
+  "status": "SETTLED",
+  "amount": 1850000.0,
+  "currency": "EUR",
+  "counterparty": "DE89370400440532013000",
+  "downstream_probe": {
+    "system": "PostgreSQL",
+    "xid": 9982410,
+    "status": "COMMITTED"
+  },
+  "jcs_digest_sha256": "4a7d1887e1a6c0b3294025d5069b0577a76e737c09341498188091ecf9474771",
+  "signature": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkNPU0VfU2lnbjEifQ...",
+  "notes": "VALID ROOT RECEIPT: Fully substantiated settlement via RFC 8785 JCS canonicalization and downstream transaction ID commit verification."
+}

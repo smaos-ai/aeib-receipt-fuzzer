@@ -1,0 +1,18 @@
+{
+  "action_id": "act-2026-audit-504-safe",
+  "type": "CREDIT_SETTLEMENT",
+  "amount": 1850000.0,
+  "currency": "EUR",
+  "counterparty": "DE89370400440532013000",
+  "timestamp": "2026-09-17T08:30:00Z",
+  "wire_fault": "TIMEOUT",
+  "http_status": 504,
+  "gateway_error": "Gateway Timeout (upstream socket timed out after 5000ms)",
+  "verdict": "UNKNOWN",
+  "status": "UNKNOWN",
+  "retry_held": true,
+  "evidence_disposition": "DORA_ART_17_UNCERTAINTY_HELD",
+  "remediation_reason": "Transport timeout observed (HTTP 504). Downstream settlement unconfirmed; state locked to UNKNOWN with retry held.",
+  "signature": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkNPU0VfU2lnbjEifQ...",
+  "notes": "SAFE RECEIPT: Harness conserved uncertainty under DORA Art. 17(3). Blocked duplicate payout retry loop until downstream xid or ETag probe confirms settlement."
+}
