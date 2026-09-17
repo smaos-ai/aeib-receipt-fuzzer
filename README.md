@@ -64,7 +64,7 @@ bash verify.sh
   ```bash
   python3 demo_killshot.py
   ```
-* **The Clue**: In **~3.8 seconds**, your terminal intercepts simulated tool calls, injects wire-level 504 timeouts, catches invalid receipts, and displays the ex-ante halt on the €1.85M $\rightarrow$ €1.90M loan edit.
+* **The Clue**: In **~3.8 seconds**, your terminal intercepts simulated tool calls, injects wire-level 504 timeouts, catches invalid receipts, and displays the ex-ante halt on the €1.85M → €1.90M loan edit.
 
 #### 3. The 5-Minute Zero-Trust Verification (Offline Container)
 * Run the canonical reference benchmark container:
