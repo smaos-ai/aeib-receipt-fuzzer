@@ -55,6 +55,8 @@ The AEIB classification cascade evaluates in strict order:
 INVALID_INPUT → MISSING_EVIDENCE → CONFLICT → REFUSED → CONFIRMED → UNKNOWN
 ```
 
+$$\text{INVALID\_INPUT} \longrightarrow \text{MISSING\_EVIDENCE} \longrightarrow \text{CONFLICT} \longrightarrow \text{REFUSED} \longrightarrow \text{CONFIRMED} \longrightarrow \text{UNKNOWN}$$
+
 A disposition at a **lower** precedence level is only reachable if all
 higher-precedence checks pass.  `UNKNOWN` is the **fail-safe terminus**:
 if no affirmative evidence confirms the external effect, the receipt
