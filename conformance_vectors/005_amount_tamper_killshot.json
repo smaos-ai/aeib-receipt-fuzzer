@@ -1,0 +1,13 @@
+{
+  "action_id": "act-2026-audit-001",
+  "type": "CREDIT_SETTLEMENT",
+  "amount": 1900000,
+  "currency": "EUR",
+  "counterparty": "DE89370400440532013000",
+  "timestamp": "2026-09-17T08:30:00Z",
+  "signature": "eyJhbGciOiJFUzI1NiIsInR5cCI6IkNPU0VfU2lnbjEifQ...",
+  "verdict": "UNKNOWN",
+  "retry_held": true,
+  "wire_fault": "TIMEOUT",
+  "expected_digest": "06b50d3cd2f3b908576e0d469fac1ff502e7991db78e958f88d3cfcbab987ca9"
+}
