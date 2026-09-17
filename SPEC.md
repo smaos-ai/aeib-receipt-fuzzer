@@ -85,20 +85,19 @@ strict pipeline:
 
 ---
 
-## 5. Reconciliation Adapters (Future — Not Implemented)
+## 5. Reconciliation Adapter Architecture
 
-Non-intrusive read-only probes that check systems of record before
-confirming execution:
+Non-intrusive read-only probes that verify external systems of record before
+confirming action execution:
 
-| System | Probe |
-|:-------|:------|
-| PostgreSQL | Transaction ID (`xid`) commit status |
-| S3 | Object `ETag` + version ID at target path |
-| Kafka | Committed partition offsets for `action_id` |
-| Stripe (Test Mode) | `idempotency_key` header vs. charge status |
+| System | Probe Type |
+|:-------|:-----------|
+| PostgreSQL | Transaction ID (`xid`) commit status query |
+| AWS S3 | Object `ETag` + version ID verification |
+| Apache Kafka | Committed partition offset lookup for `action_id` |
+| Stripe | `Idempotency-Key` header verification vs charge status |
 
-> **Status:** These adapters are specified but **not implemented** in
-> v0.2.0.  The current release is a deterministic local harness only.
+> **Engagement Scope:** The open-source suite (`v0.2.0`) tests core state-machine uncertainty preservation using synthetic fault vectors. Custom database and payment reconciliation adapters are tailored to client infrastructure during Staging Forensic Audit engagements.
 
 ---
 
