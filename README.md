@@ -10,6 +10,8 @@
 
 Version 0.2.0 · Zero dependencies · Python 3.12+ stdlib only
 
+> ### *"Every agent harness logs success. Almost none of them test whether the success was justified by the evidence at the wire."*
+>
 > **Target Audience**: **Backend & Platform Leads, Payment Engineers, AI Infrastructure Teams**  
 > **The Problem**: False `CONFIRMED` receipts emitted under transport failure create silent ledger drift and retry storms.  
 > • **45%** — False success rate under transport failure (*internal testing, n=200 traces*)  
