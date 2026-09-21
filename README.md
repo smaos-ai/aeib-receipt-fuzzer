@@ -16,7 +16,7 @@ Version 0.2.0 · Zero dependencies · Python 3.12+ stdlib only
 > **The Problem**: False `CONFIRMED` receipts emitted under transport failure create silent ledger drift and retry storms.  
 > • **45%** — False success rate under transport failure (*internal testing, n=200 traces*)  
 > • **75%** — Overclaim rate on trace-present baselines (*DEMM-Bench, arXiv:2606.20634*)  
-> **Quantified Benefit**: **100% Preserved Uncertainty (\(\Delta=0\) Toxic Receipts)** | **0 Silent Ledger Errors**.
+> **Quantified Benefit**: **100% Preserved Uncertainty (Δ = 0 Toxic Receipts)** | **0 Silent Ledger Errors**.
 
 ---
 
