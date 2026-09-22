@@ -164,6 +164,14 @@ def verify_receipt(
 # ── CLI Entry Point ──────────────────────────────────────────────
 
 if __name__ == "__main__":
+    if len(sys.argv) > 1 and sys.argv[1] in ("--help", "-h"):
+        print("Usage: cat receipt.json | python3 toxic_receipt_detector.py")
+        sys.exit(0)
+
+    if sys.stdin.isatty():
+        print("Usage: cat receipt.json | python3 toxic_receipt_detector.py")
+        sys.exit(1)
+
     raw = sys.stdin.read()
     if not raw.strip():
         print("Usage: cat receipt.json | python3 toxic_receipt_detector.py")
