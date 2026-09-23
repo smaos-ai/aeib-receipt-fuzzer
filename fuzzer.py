@@ -137,7 +137,8 @@ class FaultProxy:
 
         if fault_mode == "DROP":
             print("  → TCP RST: dropping connection", flush=True)
-            writer.close()
+            if writer:
+                writer.close()
             return None, None, None
 
         if fault_mode == "CONFLICT":
