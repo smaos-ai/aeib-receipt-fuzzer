@@ -1,0 +1,43 @@
+name: Gate 3 Independent Clean-Room Reproduction
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  gate3-cleanroom-reproducer:
+    name: Independent Clean-Room Reproduction (smaos-ai/aeib v1.0.0-rc.1)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone smaos-ai/aeib from Signed Release Tag v1.0.0-rc.1
+        run: |
+          rm -rf /tmp/aeib-cleanroom
+          git clone --branch v1.0.0-rc.1 --depth 1 https://github.com/smaos-ai/aeib.git /tmp/aeib-cleanroom
+          cd /tmp/aeib-cleanroom
+          echo "COMMIT_SHA=$(git rev-parse HEAD)" >> "$GITHUB_ENV"
+          echo "GIT_TAG=$(git describe --tags --exact-match 2>/dev/null || echo v1.0.0-rc.1)" >> "$GITHUB_ENV"
+
+      - name: Build Air-Gapped Gate 3 Container (No Cache)
+        working-directory: /tmp/aeib-cleanroom
+        run: |
+          docker compose -f aeib-reproducibility/gate3/docker-compose.yml build --no-cache
+          IMAGE_ID=$(docker inspect --format='{{.Id}}' gate3-aeib-reproduction:latest)
+          echo "IMAGE_DIGEST=${IMAGE_ID}" >> "$GITHUB_ENV"
+
+      - name: Run Offline Gate 3 Reproduction (network_mode none)
+        working-directory: /tmp/aeib-cleanroom
+        run: |
+          docker compose -f aeib-reproducibility/gate3/docker-compose.yml run --rm \
+            -e AEIB_DOCKER_IMAGE_DIGEST="${IMAGE_DIGEST}" \
+            -e AEIB_GIT_COMMIT_SHA="${COMMIT_SHA}" \
+            -e AEIB_GIT_TAG="${GIT_TAG}" \
+            -e AEIB_RUNNER_IDENTITY="smaos-ai/aeib-receipt-fuzzer Independent Clean-Room Runner (${RUNNER_NAME} / ${ImageOS} / run_id=${GITHUB_RUN_ID})" \
+            aeib-reproduction | tee /tmp/third_party_verification_transcript.txt
+
+      - name: Upload Third-Party Verification Transcript
+        uses: actions/upload-artifact@v4
+        with:
+          name: third_party_verification_transcript
+          path: /tmp/third_party_verification_transcript.txt
+          retention-days: 90
